@@ -1,0 +1,163 @@
+-- Table: pais
+
+-- DROP TABLE pais;
+
+CREATE SEQUENCE sid_pais;
+
+CREATE TABLE pais
+(
+  id_pais bigint NOT NULL,
+  nome_pais character varying(50) NOT NULL,
+  CONSTRAINT key_id_pais PRIMARY KEY (id_pais),
+  CONSTRAINT uq_nome_pais UNIQUE (nome_pais)
+) 
+WITHOUT OIDS;
+ALTER TABLE pais OWNER TO postgres;
+
+insert into pais values (nextval('sid_pais'), 'BRASIL');
+
+
+-- ################################################################################################
+
+-- Table: estado
+
+-- DROP TABLE estado;
+
+CREATE SEQUENCE sid_estado;
+
+CREATE TABLE estado
+(
+  id_estado bigint NOT NULL,
+  nome_estado character varying(50) NOT NULL,
+  nome_pais character varying(50) NOT NULL,
+  CONSTRAINT key_id_estado PRIMARY KEY (id_estado),
+  CONSTRAINT uq_nome_pais_estado UNIQUE (nome_pais, nome_estado)
+) 
+WITHOUT OIDS;
+ALTER TABLE estado OWNER TO postgres;
+
+insert into estado values (nextval('sid_estado'), 'SÃO PAULO', 'BRASIL');
+
+--#################################################################################################
+
+-- Table: cidade;
+
+-- DROP TABLE cidade;
+
+CREATE SEQUENCE sid_cidade;
+
+CREATE TABLE cidade
+(
+  id_cidade bigint NOT NULL,
+  nome_cidade character varying(50) NOT NULL,
+  nome_estado character varying(50) NOT NULL,
+  nome_pais character varying(50) NOT NULL,
+  CONSTRAINT key_id_cidade PRIMARY KEY (id_cidade),
+  CONSTRAINT uq_nome_pais_estado_cidade UNIQUE (nome_pais, nome_estado, nome_cidade)
+) 
+WITHOUT OIDS;
+ALTER TABLE cidade OWNER TO postgres;
+
+insert into cidade values (nextval('sid_cidade'), 'OUROESTE','SÃO PAULO','BRASIL');
+
+--#################################################################################################
+
+-- Table: cep;
+
+-- DROP TABLE cep;
+
+CREATE SEQUENCE sid_cep;
+
+CREATE TABLE cep
+(
+  id_cep bigint NOT NULL,
+  nome_cep character varying(10) NOT NULL,
+  nome_cidade character varying(50) NOT NULL,
+  nome_estado character varying(50) NOT NULL,
+  nome_pais character varying(50) NOT NULL,
+  CONSTRAINT key_id_cep PRIMARY KEY (id_cep),
+  CONSTRAINT uq_nome_pais_estado_cidade_cep UNIQUE (nome_pais, nome_estado, nome_cidade, nome_cep)
+) 
+WITHOUT OIDS;
+ALTER TABLE cep OWNER TO postgres;
+
+insert into cep values (nextval('sid_cep'), '15.685-000','OUROESTE','SÃO PAULO','BRASIL');
+
+--#################################################################################################
+
+-- Table: zona;
+
+-- DROP TABLE zona;
+
+CREATE SEQUENCE sid_zona;
+
+CREATE TABLE zona
+(
+  id_zona bigint NOT NULL,
+  nome_zona character varying(50) NOT NULL,
+  nome_cep character varying(10) NOT NULL,
+  nome_cidade character varying(50) NOT NULL,
+  nome_estado character varying(50) NOT NULL,
+  nome_pais character varying(50) NOT NULL,
+  CONSTRAINT key_id_zona PRIMARY KEY (id_zona),
+  CONSTRAINT uq_nome_pais_estado_cidade_cep_zona UNIQUE (nome_pais, nome_estado, nome_cidade, nome_cep, nome_zona)
+) 
+WITHOUT OIDS;
+ALTER TABLE zona OWNER TO postgres;
+
+insert into zona values (nextval('sid_zona'), 'URBANA','15.685-000','OUROESTE','SÃO PAULO','BRASIL');
+
+--#################################################################################################
+
+-- Table: bairro;
+
+-- DROP TABLE bairro;
+
+CREATE SEQUENCE sid_bairro;
+
+CREATE TABLE bairro
+(
+  id_bairro bigint NOT NULL,
+  nome_bairro character varying(50) NOT NULL,
+  nome_zona character varying(50) NOT NULL,
+  nome_cep character varying(10) NOT NULL,
+  nome_cidade character varying(50) NOT NULL,
+  nome_estado character varying(50) NOT NULL,
+  nome_pais character varying(50) NOT NULL,
+  CONSTRAINT key_id_bairro PRIMARY KEY (id_bairro),
+  CONSTRAINT uq_nome_pais_estado_cidade_cep_zona_bairro UNIQUE (nome_pais, nome_estado, nome_cidade, nome_cep, nome_zona, nome_bairro)
+) 
+WITHOUT OIDS;
+ALTER TABLE bairro OWNER TO postgres;
+
+insert into bairro values (nextval('sid_bairro'), 'CENTRO','URBANA','15.685-000','OUROESTE','SÃO PAULO','BRASIL');
+
+--#################################################################################################
+
+-- Table: endereco;
+
+-- DROP TABLE endereco;
+
+CREATE SEQUENCE sid_endereco;
+
+CREATE TABLE endereco
+(
+  id_endereco bigint NOT NULL,
+  nome_endereco character varying(50) NOT NULL,
+  nome_bairro character varying(50) NOT NULL,
+  nome_zona character varying(50) NOT NULL,
+  nome_cep character varying(10) NOT NULL,
+  nome_cidade character varying(50) NOT NULL,
+  nome_estado character varying(50) NOT NULL,
+  nome_pais character varying(50) NOT NULL,
+  CONSTRAINT key_id_endereco PRIMARY KEY (id_endereco),
+  CONSTRAINT uq_nome_pais_estado_cidade_cep_zona_bairro_endereco UNIQUE (nome_pais, nome_estado, nome_cidade, nome_cep, nome_zona, nome_bairro, nome_endereco)
+) 
+WITHOUT OIDS;
+ALTER TABLE endereco OWNER TO postgres;
+
+insert into endereco values (nextval('sid_endereco'), 'AV. DOS BANDEIRANTES','CENTRO','URBANA','15.685-000','OUROESTE','SÃO PAULO','BRASIL');
+
+
+--#################################################################################################
+

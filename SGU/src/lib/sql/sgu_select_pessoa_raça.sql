@@ -1,0 +1,1 @@
+﻿select p.pessoa_id, p.pessoa_nome, p.pessoa_dn, p.pessoa_sexo, rpe.cargo_nome from pessoa p, registro_pessoa_empresa rpe WHERE p.pessoa_cor = 'CABOCLO' and (p.pessoa_ci_uf, p.pessoa_ci_numero) = (rpe.pessoa_ci_uf, rpe.pessoa_ci_numero) and rpe.rpe_status = true and rpe.empresa_cnpj = '01611213000112' order by p.pessoa_nome

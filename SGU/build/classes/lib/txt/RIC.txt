@@ -1,0 +1,33 @@
+RIC: 1234567890-9
+NOME: DOUGLAS ESTANISLAU PEREIRA
+NACIONALIDADE: BRASILEIRA
+NATURALIDADE/UF: FERNANDÓPOLIS/SP
+FILIAÇÃO:
+MATERNO: MARIA ALCINEIDE ESTANISLAU PEREIRA
+PATERNO: CLOVIS HENRIQUE PEREIRA
+DN: 17/10/1987
+SEXO: M
+DOC. ORIGEM: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ORGÃO EMISSOR: SSP
+LOCAL: FERNANDÓPOLIS/SP
+DATA DA EXPEDIÇÃO: XX/XX/XXXX
+OBSERVAÇÕES:
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+No anverso
+Número do registro geral (pode conter dígitos, letras) e cada Unidade da Federação decide como ordenar o seu sistema
+Data de expedição
+Nome do portador
+Filiação (nome do pai(quando houver) seguido pelo da mãe)
+Naturalidade (cidade e estado onde o portador nasceu segundo o documento fornecido)
+Data de nascimento
+Doc. origem (documento que deu origem ao registro geral)
+CN: Certidão de Nascimento (LV.A) CC: Certidão de Casamento (LV.B) por exemplo: <<Ribeirão Preto>><<SP>> <<1º Subdistrito>> CC:LV.B250 FLS.0210 N.001324 (LV: livro, FLS: folhas, N: número)
+CPF (se houver)
+PIS/PASEP (se houver)
+No reverso
+Brasão da UF, nome da UF, Secretaria da Segurança Pública
+Fotografia 3 cm por 4 cm
+Polegar direito
+Assinatura do portador (se o portador for analfabeto, é carimbada a inscrição "não alfabetizado" e se não assina devido a deficiência, é carimbada a inscrição " não assina por deficiência" ).

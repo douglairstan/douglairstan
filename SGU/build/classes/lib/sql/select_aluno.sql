@@ -1,0 +1,1 @@
+select * from dp_alunos where nome_dpalunos like ('%%') order by 4

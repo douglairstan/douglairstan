@@ -1,0 +1,2 @@
+﻿select ac.aluno_classe_nchamada, p.pessoa_ci_uf, p.pessoa_ci_numero, p.pessoa_nome, p.pessoa_dn, p.pessoa_sexo, ac.aluno_classe_tranf, ac.aluno_classe_rem, ac.aluno_classe_obs from aluno_classe ac, pessoa p where (p.pessoa_ci_uf, p.pessoa_ci_numero) = (ac.pessoa_ci_uf, ac.pessoa_ci_numero) and ac.empresa_cnpj = '01611213000112' and ac.classe_numero = '211774898' and ac.aluno_classe_status = true and p.pessoa_status = true order by ac.aluno_classe_nchamada
+--select * from pessoa
